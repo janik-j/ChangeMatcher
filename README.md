@@ -1,15 +1,18 @@
 # ChangeMatchers
-ChangeMatchers is a platform that helps companies upload their ESG or CRSD reports and match them with local opportunities, including research projects, startups, and more, aimed at improving sustainability metrics.
+
+ChangeMatchers is an AI-powered platform that analyzes ESG/CRSD reports and matches companies with local sustainability opportunities, including research projects, startups, and initiatives.
 
 ## Features
-- **Report Upload**: Companies can upload ESG, CRSD, or similar reports.
-- **Opportunities Matching**: Match reports with an opportunities database that includes research projects, startups, and other initiatives.
-- **Localized Databases**: Use dropdown menus to filter opportunities by location (e.g., Munich) and industry (e.g., Automotive).
+- **AI-Powered Analysis**: Utilizes Google's Gemini AI to analyze ESG/CRSD reports
+- **Smart Matching**: Automatically matches reports with relevant local opportunities
+- **Location-Based**: Filters opportunities by city and industry
+- **Detailed Analysis**: Provides match scores, alignment points, potential impact, and implementation timeline
+- **User-Friendly Interface**: Built with Streamlit for easy interaction
 
-## Usage
-1. Upload your ESG, CRSD, or similar report.
-2. Select your location and industry from the dropdown menu.
-3. Explore matched opportunities to improve your sustainability metrics.
+## Prerequisites
+- Python 3.x
+- Google Cloud Platform account with Gemini API access
+- Valid Gemini API key
 
 ## Installation
 ```bash
@@ -20,21 +23,40 @@ source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Running the Prototype
-
-### **Command-Line Prototype**
-```bash
-python prototype.py
+## Configuration
+1. Create a `.env` file in the root directory
+2. Add your Gemini API key:
+```
+GEMINI_API_KEY=your_api_key_here
 ```
 
-### **Streamlit Frontend**
-Launch the Streamlit application to interact with the Gemini API through a web interface.
+## Running the Application
+1. Ensure you're in your virtual environment:
+```bash
+# On Unix/macOS:
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+```
+
+2. Start the Streamlit application:
 ```bash
 streamlit run app.py
 ```
 
+3. The application will open in your default web browser at `http://localhost:8501`
+
+Note: If you're running the application remotely, you can access it using the Network URL provided in the terminal output.
+
+## Usage
+1. Select your city and industry from the sidebar dropdowns
+2. Enter the URL of your ESG/CRSD report (PDF format)
+3. Click "Find Matching Opportunities"
+4. Review the AI-generated matches and analysis
+
 ## Contributing
-Feel free to fork the repository and submit pull requests.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 This project is licensed under the MIT License.
