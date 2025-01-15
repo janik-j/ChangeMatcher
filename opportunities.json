@@ -1,0 +1,58 @@
+{
+    "Germany": {
+        "Munich": {
+            "Automotive": [
+                {
+                    "name": "TUM Chair of Materials Handling, Material Flow, Logistics",
+                    "type": "Research Group",
+                    "description": "The project aims to enhance sustainable automotive production by developing innovative recycled materials and improving additive manufacturing processes, focusing on efficient aluminum scrap recycling and precise powder supply systems.",
+                    "url": "https://www.mec.ed.tum.de/en/fml/research/current-research-projects/future-sustainable-car-materials/",
+                    "focus_areas": ["Electric Mobility", "Autonomous Driving", "Sustainable Manufacturing"]
+                },
+                {
+                    "name": "Tacto",
+                    "type": "Startup",
+                    "description": "Innovative startup that optimizes your supply chains",
+                    "url": "https://en.tacto.ai/post/das-lieferkettengesetz-aus-der-perspektive-eines-kmus",
+                    "focus_areas": ["Supply Chain Optimization", "Sustainability", "Supply Chain Management"]
+                }
+            ],
+            "Manufacturing": [
+                {
+                    "name": "Fraunhofer Manufacturing Innovation",
+                    "type": "Research Institute",
+                    "description": "Leading research in sustainable manufacturing processes",
+                    "url": "https://example.com/fraunhofer-manufacturing",
+                    "focus_areas": ["Industry 4.0", "Sustainable Production", "Energy Efficiency"]
+                }
+            ]
+        },
+        "Berlin": {
+            "Automotive": [
+                {
+                    "name": "Berlin EV Innovation Hub",
+                    "type": "Innovation Hub",
+                    "description": "Collaborative space for electric vehicle innovation",
+                    "url": "https://example.com/berlin-ev-hub",
+                    "focus_areas": ["Battery Technology", "Charging Infrastructure", "Urban Mobility"]
+                }
+            ],
+            "Manufacturing": [
+                {
+                    "name": "Smart Factory Berlin",
+                    "type": "Research Center",
+                    "description": "Research center for smart manufacturing solutions",
+                    "url": "https://example.com/smart-factory-berlin",
+                    "focus_areas": ["Digital Manufacturing", "AI in Production", "Green Manufacturing"]
+                },
+                {
+                    "name": "Sustainable Production Lab",
+                    "type": "University Lab",
+                    "description": "University research lab focusing on sustainable production methods",
+                    "url": "https://example.com/sustainable-production-lab",
+                    "focus_areas": ["Waste Reduction", "Energy Management", "Circular Manufacturing"]
+                }
+            ]
+        }
+    }
+} 
