@@ -31,16 +31,7 @@ GEMINI_API_KEY=your_api_key_here
 ```
 
 ## Running the Application
-1. Ensure you're in your virtual environment:
-```bash
-# On Unix/macOS:
-source venv/bin/activate
-
-# On Windows:
-venv\Scripts\activate
-```
-
-2. Start the Streamlit application:
+1 Start the Streamlit application:
 ```bash
 streamlit run app.py
 ```
