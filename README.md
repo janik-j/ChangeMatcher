@@ -35,8 +35,7 @@ GEMINI_API_KEY=your_api_key_here
 ```bash
 streamlit run app.py
 ```
-
-3. The application will open in your default web browser at `http://localhost:8501`
+2. The application will open in your default web browser at `http://localhost:8501`
 
 Note: If you're running the application remotely, you can access it using the Network URL provided in the terminal output.
 
