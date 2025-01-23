@@ -11,8 +11,8 @@ ChangeMatchers is an AI-powered platform that analyzes ESG/CRSD reports and matc
 
 ## Prerequisites
 - Python 3.x
-- Google Cloud Platform account with Gemini API access
-- Valid Gemini API key
+- Google AI Studio account with Gemini API access
+- Valid Gemini API key (obtain from [Google AI Studio](https://makersuite.google.com/app/apikey))
 
 ## Installation
 ```bash
@@ -23,27 +23,22 @@ source venv/bin/activate  # On Windows, use: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Configuration
-1. Create a `.env` file in the root directory
-2. Add your Gemini API key:
-```
-GEMINI_API_KEY=your_api_key_here
-```
-
 ## Running the Application
-1 Start the Streamlit application:
+1. Start the Streamlit application:
 ```bash
 streamlit run app.py
 ```
 2. The application will open in your default web browser at `http://localhost:8501`
+3. Enter your Gemini API key in the sidebar when prompted
 
 Note: If you're running the application remotely, you can access it using the Network URL provided in the terminal output.
 
 ## Usage
-1. Select your city and industry from the sidebar dropdowns
-2. Enter the URL of your ESG/CRSD report (PDF format)
-3. Click "Find Matching Opportunities"
-4. Review the AI-generated matches and analysis
+1. Enter your Gemini API key in the sidebar
+2. Select your city and industry from the sidebar dropdowns
+3. Enter the URL of your ESG/CRSD report (PDF format)
+4. Click "Find Matching Opportunities"
+5. Review the AI-generated matches and analysis
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
