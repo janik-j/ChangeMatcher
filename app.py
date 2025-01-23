@@ -46,13 +46,19 @@ if not OPPORTUNITIES_STRUCTURE:
     st.error("Failed to load opportunities structure. Please check the opportunities folder.")
     st.stop()
 
-# Retrieve the Gemini API key from the environment variables
-api_key = os.getenv("GEMINI_API_KEY")
+# Streamlit App Title
+st.image("changemakers-logo.png", width=200)
+st.title("ChangeMatcher AI Assistant 🌟")
+
+# API Key input in sidebar
+st.sidebar.header("API Configuration")
+api_key = st.sidebar.text_input("Enter your Gemini API Key", type="password")
+
 if not api_key:
-    st.error("Error: GEMINI_API_KEY not found. Please set it in the `.env` file.")
+    st.warning("Please enter your Gemini API key in the sidebar to proceed.")
     st.stop()
 
-# Configure the Gemini API with your API key
+# Configure the Gemini API with the provided API key
 try:
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-1.5-flash")
@@ -84,18 +90,25 @@ def process_report_and_generate_matches(esg_url, opportunity_content, location_c
         - City: {location_context['city']}
         - Industry: {location_context['industry']}
         
+        Project Context:
+        {project_description if project_description else "No additional project context provided."}
+        
         Available Opportunities:
         {opportunity_content}
         
-        Based on the ESG report, analyze and rate each opportunity based on:
-        1. Match Score (0-100) based on how it will improve the company's ESG metrics
-        2. Key Alignment Points 
+        Based on the ESG report and project context, analyze and rate each opportunity based on:
+        1. Match Score (0-100) based on how it will improve the company's ESG metrics and align with project goals
+        2. Key Alignment Points (including specific connections to project goals if provided)
         3. Potential Impact for ESG metrics
-        4. Implementation Timeline
+        4. Mail with a concrete Idea proposal to the startup from the company providing the ESG report. Max 3 sentences asking for a meeting.
+        5. Relevant Mail Address
         
         Present the results in a markdown table format, followed by detailed explanations for each opportunity.
         Sort the opportunities by Match Score in descending order.
-        Focus on practical, actionable insights and specific connections between the company's goals and each opportunity. 
+        Focus on practical, actionable insights and specific connections between:
+        - The company's ESG goals
+        - The stated project objectives (if provided)
+        - The available opportunities
         """
         
         # Generate analysis
@@ -105,13 +118,10 @@ def process_report_and_generate_matches(esg_url, opportunity_content, location_c
         logger.exception("Failed to process report and generate matches")
         return None
 
-# Streamlit App Title
-st.title("ChangeMatchers AI Assistant 🌟")
-
 # Main content area
 st.header("Find Matching Opportunities")
 st.write("""
-Provide the URL to your ESG/CRSD report and we'll match you with relevant opportunities 
+Provide the URL to your ESG/CSRD report and we'll match you with relevant opportunities 
 based on your location and industry.
 """)
 
@@ -131,6 +141,13 @@ st.header("Provide Your Report")
 esg_report_url = st.text_input(
     "Enter the URL to your ESG/CRSD Report (PDF)",
     placeholder="https://example.com/your-esg-report.pdf"
+)
+
+# Add project description text area
+project_description = st.text_area(
+    "Optional Project Description",
+    placeholder="Enter any additional context about your sustainability project or specific goals...",
+    help="This information will be used to better match opportunities with your specific needs."
 )
 
 # Generate Matches button
@@ -169,6 +186,6 @@ else:
 # Add footer with additional information
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-### About ChangeMatchers
-We help companies find local opportunities to improve their sustainability metrics through targeted collaborations with research projects, startups, and initiatives.
+### About ChangeMatcher
+We help companies find local opportunities to improve sustainability metrics through targeted collaborations with research projects, startups and initiatives.
 """)
