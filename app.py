@@ -50,13 +50,20 @@ if not OPPORTUNITIES_STRUCTURE:
 st.image("changemakers-logo.png", width=200)
 st.title("ChangeMatcher AI Assistant 🌟")
 
-# Configure the Gemini API with the secret API key
+# API Key input in sidebar
+st.sidebar.header("API Configuration")
+api_key = st.sidebar.text_input("Enter your Gemini API Key", type="password", help="Get your API key from Google AI Studio")
+
+if not api_key:
+    st.warning("Please enter your Gemini API key in the sidebar to proceed.")
+    st.stop()
+
+# Configure the Gemini API with the provided API key
 try:
-    api_key = st.secrets["GEMINI_API_KEY"]
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel("gemini-1.5-flash")
 except Exception as e:
-    st.error("Failed to configure Gemini API. Please check if the API key is correctly set in .streamlit/secrets.toml")
+    st.error(f"Failed to configure Gemini API: {e}")
     st.stop()
 
 def process_report_and_generate_matches(esg_url, opportunity_content, location_context):
