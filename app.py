@@ -48,7 +48,6 @@ if not OPPORTUNITIES_STRUCTURE:
 
 # Streamlit App Title
 st.image("changemakers-logo.png", width=200)
-st.title("ChangeMatcher AI Assistant 🌟")
 
 # API Key input in sidebar
 st.sidebar.header("API Configuration")
