@@ -83,7 +83,7 @@ def process_report_and_generate_matches(esg_url, opportunity_content, location_c
         
         # Construct prompt for analysis
         prompt = f"""
-        You are an AI assistant analyzing an ESG/CRSD report and matching it with potential sustainability opportunities.
+        You are an AI assistant analyzing an ESG/CSRD report and matching it with potential sustainability opportunities.
         
         Location Context:
         - City: {location_context['city']}
@@ -135,10 +135,10 @@ selected_city = st.sidebar.selectbox("Select City", cities)
 industries = OPPORTUNITIES_STRUCTURE[selected_city] if selected_city else []
 selected_industry = st.sidebar.selectbox("Select Industry", industries)
 
-# URL input for ESG/CRSD report
+# URL input for ESG/CSRD report
 st.header("Provide Your Report")
 esg_report_url = st.text_input(
-    "Enter the URL to your ESG/CRSD Report (PDF)",
+    "Enter the URL to your ESG/CSRD Report (PDF)",
     placeholder="https://example.com/your-esg-report.pdf"
 )
 
@@ -180,7 +180,7 @@ if esg_report_url and selected_city and selected_industry:
             else:
                 st.error("Failed to generate matches. Please check the URL and try again.")
 else:
-    st.info("👆 Please provide your ESG/CRSD report URL and select your location and industry to find matching opportunities.")
+    st.info("👆 Please provide your ESG/CSRD report URL and select your location and industry to find matching opportunities.")
 
 # Add footer with additional information
 st.sidebar.markdown("---")
